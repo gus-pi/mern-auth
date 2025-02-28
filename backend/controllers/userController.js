@@ -19,8 +19,6 @@ export const authUser = asyncHandler(async (req, res) => {
     res.status(401);
     throw new Error('Invalid credentials');
   }
-
-  res.status(200).json({ message: 'success' });
 });
 
 //register a user
