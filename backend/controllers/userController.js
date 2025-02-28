@@ -63,7 +63,12 @@ export const logoutUser = asyncHandler(async (req, res) => {
 
 //get user profile
 export const getUserProfile = asyncHandler(async (req, res) => {
-  res.status(200).json({ message: 'user profile' });
+  const user = {
+    _id: req.user._id,
+    name: req.user.name,
+    email: req.user.email,
+  };
+  res.status(200).json(user);
 });
 
 //update user profile
