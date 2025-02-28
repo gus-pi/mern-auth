@@ -1,6 +1,7 @@
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { FaSignInAlt, FaSignOutAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -11,16 +12,16 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <LinkContainer to="/login">
+              <Link to="/login">
                 <Nav.Link>
                   <FaSignInAlt /> Sign In
                 </Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/register">
+              </Link>
+              <Link to="/register">
                 <Nav.Link>
                   <FaSignOutAlt /> Sign Up
                 </Nav.Link>
-              </LinkContainer>
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
