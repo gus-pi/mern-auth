@@ -1,10 +1,10 @@
-import { GetDefaultMiddleware } from './../node_modules/@reduxjs/toolkit/src/getDefaultMiddleware';
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore } from '@reduxjs/toolkit';
+import authReducer from './slices/authSlice';
 
 const store = configureStore({
-    reducer: {},
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
-    devTools: true
-})
+  reducer: { auth: authReducer },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
+  devTools: true,
+});
 
-export default store
+export default store;
