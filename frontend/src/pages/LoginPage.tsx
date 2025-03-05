@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLoginMutation } from '../slices/userApiSlice';
 import { setCredentials } from '../slices/authSlice';
 import { RootState } from '../store';
+import { toast } from 'react-toastify';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -31,7 +32,7 @@ const LoginPage = () => {
       dispatch(setCredentials({ ...res }));
       navigate('/');
     } catch (error: any) {
-      console.log(error.data.message || error.error);
+      toast.error(error.data.message || error.error);
     }
   };
 
