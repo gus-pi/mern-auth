@@ -7,6 +7,7 @@ import { useLoginMutation } from '../slices/userApiSlice';
 import { setCredentials } from '../slices/authSlice';
 import { RootState } from '../store';
 import { toast } from 'react-toastify';
+import Loader from '../components/Loader';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -58,6 +59,9 @@ const LoginPage = () => {
             onChange={(e) => setPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>
+
+        {isLoading && <Loader />}
+
         <Button type="submit" variant="primary" className="mt-3">
           Sign In
         </Button>
